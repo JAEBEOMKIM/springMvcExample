@@ -31,8 +31,8 @@ public class MainContoller {
         return "main:main";
     }
 
-    @RequestMapping(value= "/codelist.do")
-    public String codelist(ModelMap model, @RequestParam Map<String, String> param) {
+    @RequestMapping(value= "/jpa/codelist.do")
+    public String codelist_jpa(ModelMap model, @RequestParam Map<String, String> param) {
         log.info("============== main.do call ============");
 
         String id = param.get("id");

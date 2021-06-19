@@ -3,4 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<input type="button" value="창 닫기" onclick="window.close()"/>
+<br/>
 ${codelist}
