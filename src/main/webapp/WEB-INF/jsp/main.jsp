@@ -28,7 +28,11 @@
     <tbody>
     <c:forEach var="data" items="${codeGroup}">
     <tr>
-        <td><a href="javascript:void()" onclick="btnDetail('${data.codeGroupId}')">${data.codeGroupId}</a></td>
+        <td>
+            ${data.codeGroupId}
+            <a href="javascript:void()" onclick="btnJpa('${data.codeGroupId}')">jpa</a>
+            <a href="javascript:void()" onclick="btnMybatis('${data.codeGroupId}')">mybatis</a>
+        </td>
         <td>${data.codeGroupName}</td>
         <td>${data.codeGroupDesc}</td>
         <td>${data.lastUpdateDtime}</td>
@@ -39,9 +43,14 @@
 </table>
 
 <script>
-    function btnDetail(id) {
-        window.open('codelist.do?id='+id);
+    function btnJpa(id) {
+        window.open('/jpa/codelist.do?id='+id);
     }
+
+    function btnMybatis(id) {
+        window.open('/mybatis/codelist.do?id='+id);
+    }
+
 </script>
 </body>
 </html>

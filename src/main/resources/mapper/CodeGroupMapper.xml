@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.neobns.mapper.CodeGroupMapper">
+
+    <select id="getCodeGroup" resultType="com.example.neobns.service.vo.CodeGroupVo">
+        select
+                `CODE_GROUP_ID`,
+                `CODE_GROUP_NAME`,
+                `CODE_GROUP_DESC`,
+                `LAST_UPDATE_DTIME`,
+                `LAST_UPDATE_USER_ID`
+        from fwk_code_group
+    </select>
+
+    <resultMap id="codeGroupDetail" type="com.example.neobns.entity.CodeGroup">
+        <id property="codeGroupId" column="CODE_GROUP_ID"/>
+        <result property="codeGroupName" column="CODE_GROUP_NAME"/>
+        <result property="codeGroupDesc" column="CODE_GROUP_DESC"/>
+        <result property="lastUpdateDtime" column="LAST_UPDATE_DTIME"/>
+        <result property="lastUpdateUserId" column="LAST_UPDATE_USER_ID"/>
+        <collection property="codeList" column="CODE_GROUP_ID" select="codelist" javaType="java.util.ArrayList"/>
+    </resultMap>
+
+    <select id="findById" resultMap="codeGroupDetail">
+        select
+                `CODE_GROUP_ID`,
+                `CODE_GROUP_NAME`,
+                `CODE_GROUP_DESC`,
+                `LAST_UPDATE_DTIME`,
+                `LAST_UPDATE_USER_ID`
+        from fwk_code_group
+        where `CODE_GROUP_ID` = #{id}
+    </select>
+
+    <select id="codelist" resultType="com.example.neobns.service.vo.CodeVo">
+        select
+                `CODE_GROUP_ID`,
+                `CODE`,
+                `CODE_NAME`,
+                `CODE_DESC`,
+                `SORT_ORDER`,
+                `USE_YN`,
+                `CODE_ENGNAME`,
+                `LAST_UPDATE_DTIME`,
+                `LAST_UPDATE_USER_ID`
+        from fwk_code
+        where `CODE_GROUP_ID` = #{codeGroupId}
+    </select>
+</mapper>
