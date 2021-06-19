@@ -17,7 +17,7 @@
 <body>
 여기부터 메인입니다.
 
-<table>
+<table border="1">
     <tr>
         <td>CODE_GROUP_ID</td>
         <td>CODE_GROUP_NAME</td>

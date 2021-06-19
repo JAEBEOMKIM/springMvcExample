@@ -5,7 +5,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -42,6 +44,9 @@ public class Code {
     @Column(name="LAST_UPDATE_USER_ID")
     private String lastUpdateUserId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CODE_GROUP_ID", insertable = false, updatable = false)
+    private CodeGroup codeGroup;
 }
 
 

@@ -1,6 +1,7 @@
 package com.example.neobns.service;
 
 import com.example.neobns.entity.CodeGroup;
+import com.example.neobns.repository.CodeGroupMap;
 import com.example.neobns.repository.CodeGroupRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +15,9 @@ public class CodeGroupService {
     private final CodeGroupRepository codeGroupRepository;
 
     // 전체조회
-    public Iterable<CodeGroup> findByAll() {
-        return codeGroupRepository.findAll();
+    public Iterable findByAll() {
+//        return codeGroupRepository.findAll();
+        return codeGroupRepository.findAllBy();
     }
 
     // key 값으로 조회
