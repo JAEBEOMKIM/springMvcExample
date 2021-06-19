@@ -20,6 +20,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class MainContoller {
 
+    private final CodeGroupService codeGroupService;
+
     @RequestMapping(value= "/main.do")
     public String main(ModelMap model) {
         log.info("============== main.do call ============");
@@ -39,7 +41,6 @@ public class MainContoller {
         return "main:codelist";
     }
 
-    private final CodeGroupService codeGroupService;
 
     // 코드목록 전체
     @GetMapping(value = "/codeGroup")

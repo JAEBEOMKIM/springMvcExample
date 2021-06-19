@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.neobns.mapper.CodeGroupMapper">
+
+    <select id="getCodeGroup" resultType="com.example.neobns.service.vo.CodeGroupVo">
+        select
+                `CODE_GROUP_ID`,
+                `CODE_GROUP_NAME`,
+                `CODE_GROUP_DESC`,
+                `LAST_UPDATE_DTIME`,
+                `LAST_UPDATE_USER_ID`
+        from fw_code
+    </select>
+
+
+    <select id="findById" resultType="com.example.neobns.entity.CodeGroup">
+
+    </select>
+</mapper>
