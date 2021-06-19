@@ -1,4 +1,4 @@
-package com.example.neobns.repository;
+package com.example.neobns.service.vo;
 
 public interface CodeGroupMap {
     String getCodeGroupId();

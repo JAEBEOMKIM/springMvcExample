@@ -28,7 +28,7 @@
     <tbody>
     <c:forEach var="data" items="${codeGroup}">
     <tr>
-        <td>${data.codeGroupId}</td>
+        <td><a href="javascript:void()" onclick="btnDetail('${data.codeGroupId}')">${data.codeGroupId}</a></td>
         <td>${data.codeGroupName}</td>
         <td>${data.codeGroupDesc}</td>
         <td>${data.lastUpdateDtime}</td>
@@ -37,5 +37,11 @@
     </c:forEach>
     </tbody>
 </table>
+
+<script>
+    function btnDetail(id) {
+        window.open('codelist.do?id='+id);
+    }
+</script>
 </body>
 </html>
